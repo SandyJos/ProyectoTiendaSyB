@@ -1,0 +1,36 @@
+body{
+    font-family:'Times New Roman';
+    font-size: 20px;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    padding: 10px;
+}
+.Tendencia-lis{
+    display: grid;
+   grid-template-columns: 1fr 100px 1fr;
+    max-width: 800px;
+    margin: auto;
+}
+.Articulo1{
+    border: 1px solid mediumaquamarine;
+    padding: 10px;
+    background:crimson;
+    text-align: center;
+}
+.Articulo2{
+    border: 1px solid mediumaquamarine;
+    padding: 10px;
+    background:chartreuse;
+    text-align: center;
+}
+.medio{
+    text-align:center;
+    margin: auto;
+    font-size: 40px;
+}
+.img{
+    width: min-content;
+}
