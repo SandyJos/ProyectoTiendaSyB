@@ -10,7 +10,7 @@
     console.log(response)
      response.json()
      .then(function (tendencia){
-         console.log(Tendencia)
+         console.log(Tendencia)s
 
      })
 
