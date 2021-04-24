@@ -28,20 +28,36 @@ function ConsultarTendencias(){
     ConsultarTendencias(segundaId,2)
 
 }*/
-//console.log()   https://api.mercadolibre.com/categories/MLM189530
-//                  /sites/MLA/search?category=MLM1144
+//                  https://api.mercadolibre.com/sites/MLM/categories   TODAS LAS CATEGORIAS
+//                  https://api.mercadolibre.com/categories/MLM189530   INFORMACIÓN DE LA CATEGORÍA ESPECÍFICA
+//                  /sites/MLM/search?category=MLM1144                  CONTENIDO DE LA CATEGORÍA ESPECÍFICA
 
-let getApiml = "https://api.mercadolibre.com/sites/MLM/search?category=MLM189530";
+let apiml = "https://api.mercadolibre.com/sites/MLM/search?category=";
+let idCategoria = "MLM189530";
+
+let titArt = document.getElementById("tituloArticulo");
+let imgArt = document.getElementById("imgArt");
 
 async function getProductos (){
+    let getApiml = apiml + idCategoria;
     let response = await fetch(getApiml);
-    let datos = await response.json();
-    return datos
+    let datosApiml = await response.json();
+    return datosApiml
 }
 
 async function getInfoProd(){
     let info = await getProductos();
-    console.log(info)
+    console.log(info)                   //Trae el contenido de la categoría (c/ lista de artículos)
+    let articulos = info.results;       //Información de todos los artículos de la categoría (array)
+    console.log(articulos)              //Muestra la información de todos artículo
+    console.log(articulos[0])           //Muestra la información de un artículo
+    
+    showProducts(articulos);
 }
 
 getInfoProd();
+
+const showProducts = (listArticulos) =>{
+    titArt.textContent = (listArticulos[0].title)
+    imgArt.setAttribute('src', listArticulos[0].thumbnail)
+}
