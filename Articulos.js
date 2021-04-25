@@ -1,37 +1,7 @@
- //fech se utiliza para llamar a la api 
-        //fech es una promesa 
-        //se le pasa como parametro el link de la api a buscar
-        //fetch (´el link a buscar ${id}´) se pone el id para busacra cualquier articulo 
-
-
-/*function ConsultarTendencia(){
-    fetch ("https://api.mercadolibre.com/sites/MLM/categories")  //se le pasa como parametro el link de la api a buscar
-.then(function(response){
-    console.log(response)
-     response.json()
-     .then(function (tendencia){
-         console.log(Tendencia)
-
-     })
-
-})
-
-}
-
-ConsultarTendencia();
-
-function ConsultarTendencias(){
-    let primeraId= Math.round(Math.round() * 10)
-    let segundoId = Math.round(Math.round() * 10)
-
-    ConsultarTendencias(primeraId,1)
-    ConsultarTendencias(segundaId,2)
-
-}*/
 //                  https://api.mercadolibre.com/sites/MLM/categories   TODAS LAS CATEGORIAS
 //                  https://api.mercadolibre.com/categories/MLM189530   INFORMACIÓN DE LA CATEGORÍA ESPECÍFICA
-//                  /sites/MLM/search?category=MLM1144                  CONTENIDO DE LA CATEGORÍA ESPECÍFICA 
-                    /* https://api.mercadolibre.com/items/MLM775866604/description
+//                  /sites/MLM/search?category=MLM1144                  CONTENIDO DE LA CATEGORÍA ESPECÍFICO
+/*                  https://api.mercadolibre.com/items/MLM775866604/description
                     https://api.mercadolibre.com/sites/MLM/search?discount=5-100 */
 
 let apiml = "https://api.mercadolibre.com/sites/MLM/search?category=";
@@ -120,3 +90,106 @@ const showProducts = (listArticulos) =>{
     }
     
 }
+
+// CARRITO
+
+/* class CarritoMl {
+    contructor(obtenerProducto, quitarProducto){
+        this.obtenerProducto = obtenerProducto;
+        this.quitarProducto = quitarProducto;
+    }
+
+    informarListaProductos(mensaje){
+        console.log(mensaje);
+    };
+
+    obtenerProducto(){
+        this.obtenerProducto = this.obtenerProducto + 1;
+        this.informarListaProductos('Ya guardé tu producto');
+    }
+
+    quitarProducto(){
+        this.quitarProducto = this.quitarProducto - 1;
+        this.informarListaProductos('Ya quité tu producto');
+    }
+    
+}
+
+let Carrito = new CarritoMl();
+
+Carrito.obtenerProducto();
+Carrito.quitarProducto(); */
+
+ 
+
+/* class FabricaBicicletas {
+    constructor (armado, pintado, materiPrima, pintura){
+        this.armado = armado || false;
+        this.pintado = pintado || false;
+        this.materiPrima = materiPrima;
+        this.pintura = pintura;
+    }
+
+    informar (mensaje) {
+        console.log(mensaje);
+    };
+    armar () {
+        this.materiPrima = this.materiPrima - 1;
+        this.informar('La Bicicleta fue ensamblada correctamente');
+        this.armado = true;
+    };
+    pintar () {
+        if (this.armado){
+            this.pintura = this.pintura - 1;
+            this.informar('La Bicicleta fue pintada correctamente');
+            this.pintado = true;
+        }else {
+            this.informar('Para pintar una Bicicleta primero debe armarla');
+        }
+        this.finalizado();
+    };
+    finalizado () {
+        if (this.armado & this.pintado){
+            this.informar('La Bicicleta quedo terminada correctamente')
+	    this.pintado = false
+            this.armado = false
+        }else {
+            this.informar('Alguno de los pasos requeridos no se finalizó')
+        }
+    }
+}
+
+let Fabrica = new FabricaBicicletas (false, false, 10, 20)
+
+Fabrica.armar();
+Fabrica.pintar(); */
+
+// CARRITO
+
+class CarritoMl {
+
+    contructor(obtenerProducto, quitarProducto){
+        this.obtenerProducto = obtenerProducto;
+        this.quitarProducto = quitarProducto;
+    }
+
+    informarListaProductos(mensaje){
+        console.log(mensaje);
+    };
+
+    obtenerProducto(){
+        this.obtenerProducto = this.obtenerProducto + 1;
+        this.informarListaProductos('Ya guardé tu producto');
+    }
+
+    quitarProducto(){
+        this.quitarProducto = this.quitarProducto - 1;
+        this.informarListaProductos('Ya quité tu producto');
+    }
+    
+}
+
+let Carrito = new CarritoMl();
+
+Carrito.obtenerProducto();
+Carrito.quitarProducto();
