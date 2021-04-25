@@ -50,7 +50,7 @@ async function getInfoProd(){
     console.log(info)                   //Trae el contenido de la categoría (c/ lista de artículos)
     let articulos = info.results;       //Información de todos los artículos de la categoría (array)
     console.log(articulos)              //Muestra la información de todos artículo
-    console.log(articulos[0])           //Muestra la información de un artículo
+    console.log(articulos[16])           //Muestra la información de un artículos
     
     showProducts(articulos);
 }
@@ -58,6 +58,6 @@ async function getInfoProd(){
 getInfoProd();
 
 const showProducts = (listArticulos) =>{
-    titArt.textContent = (listArticulos[0].title)
-    imgArt.setAttribute('src', listArticulos[0].thumbnail)
+    titArt.textContent = (listArticulos[16].title)
+    imgArt.setAttribute('src', listArticulos[16].thumbnail)
 }
