@@ -50,7 +50,7 @@ async function getInfoProd(){
     console.log(info)                   //Trae el contenido de la categoría (c/ lista de artículos)
     let articulos = info.results;       //Información de todos los artículos de la categoría (array)
     console.log(articulos)              //Muestra la información de todos artículo
-    console.log(articulos[16])           //Muestra la información de un artículos
+    console.log(articulos[16])           //Muestra la información de un artículo
     
     showProducts(articulos);
 }
